@@ -1,15 +1,15 @@
-package com.product.productservice.DTO;
+package com.product.productservice.dto;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class Errordto {
+public class ErrorDto {
     private String messege;
     private String code;
 
-    public Errordto(){
+    public ErrorDto(){
 
     }
 }

@@ -1,4 +1,4 @@
-package com.product.productservice.Model;
+package com.product.productservice.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.CascadeType;
@@ -7,7 +7,6 @@ import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import java.io.Serializable;
 import java.util.List;
@@ -16,11 +15,11 @@ import java.util.List;
 @Setter
 @Entity
 @NoArgsConstructor
-public class Category extends Basemodel implements Serializable {
+public class Category extends BaseModel implements Serializable {
     private String title;
 
     @JsonIgnore
     @OneToMany(mappedBy = "category",cascade = CascadeType.REMOVE)
-    List<Products> products;
+    List<Product> products;
 
 }

@@ -1,11 +1,11 @@
-package com.product.productservice.DTO;
+package com.product.productservice.dto;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class productresponsedto {
+public class ProductResponseDto {
     private Integer id;
     private String title;
     private String description;

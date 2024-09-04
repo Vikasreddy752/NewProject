@@ -1,7 +1,6 @@
-package com.product.productservice.Model;
+package com.product.productservice.model;
 
 
-import com.fasterxml.jackson.annotation.JsonTypeId;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -18,12 +17,12 @@ import java.util.Date;
 
 @MappedSuperclass
 @NoArgsConstructor
-public class Basemodel implements Serializable {
+public class BaseModel  {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private int id;
+    private Integer id;
     private Date createdAt;
     private Date updatedAt;
     private boolean deleted;

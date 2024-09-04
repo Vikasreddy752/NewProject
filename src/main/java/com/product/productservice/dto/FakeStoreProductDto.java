@@ -1,13 +1,11 @@
-package com.product.productservice.DTO;
+package com.product.productservice.dto;
 
-import com.product.productservice.Model.Category;
-import com.product.productservice.Model.Products;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class Fakestoreproductdto {
+public class FakeStoreProductDto {
     private Integer id;
     private String title;
     private String description;
