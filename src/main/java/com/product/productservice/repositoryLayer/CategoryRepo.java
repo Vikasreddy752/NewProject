@@ -15,7 +15,4 @@ public interface CategoryRepo extends JpaRepository<Category, Integer> {
 
     Category findByTitle(String title);
 
-
-    @Query("select p.id,p.title,p.price from Product p where p.category = :category")
-    ProductProjection findbycategory(String category);
 }

@@ -10,6 +10,7 @@ import com.product.productservice.model.Product;
 import com.product.productservice.repositoryLayer.projection.ProductProjection;
 import com.product.productservice.service.ProductService;
 import com.product.productservice.builder.ProductMapper;
+import org.hibernate.annotations.Parameter;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
@@ -39,7 +40,7 @@ public class ProductController {
         return mapper.convertoproductresponsedto(pr);
     }
 
-    @GetMapping("/product/{id}")
+    @GetMapping("/productid/{id}")
     public ProductResponseDto getproductbyid(@PathVariable("id") Integer id)
             throws InvalidProductIdException, ProductNotFoundException {
 
@@ -104,8 +105,9 @@ public class ProductController {
     }
 
     @GetMapping("products/{category}")
-    public  ProductProjection getproductbycategory(@PathVariable("category") String category) {
-        ProductProjection products = svc.productbycategory(category);
+    public List<ProductProjection> getproductbycategory(@PathVariable("category") String category) {
+        List<ProductProjection> products = svc.productbycategory(category);
+
         return products;
     }
 }

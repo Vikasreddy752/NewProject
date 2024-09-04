@@ -111,7 +111,7 @@ public class FakeStoreService implements ProductService {
     public List<Product> productbytittle(String tittle){
         return null;
     }
-    public ProductProjection productbycategory(String category){
+    public List<ProductProjection> productbycategory(String category){
         return null;
     }
 }

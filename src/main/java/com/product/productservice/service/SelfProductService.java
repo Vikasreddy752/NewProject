@@ -5,6 +5,7 @@ import com.product.productservice.model.Product;
 import com.product.productservice.repositoryLayer.CategoryRepo;
 import com.product.productservice.repositoryLayer.ProductRepo;
 import com.product.productservice.repositoryLayer.projection.ProductProjection;
+import jakarta.persistence.Id;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -33,8 +34,8 @@ public class SelfProductService implements ProductService {
     @Override
     public Product getProductById(Integer id) {
 
-        Optional<Product> product = prodrepo.findById(id);
-        return product.get();
+        Optional<Product> pr = prodrepo.findById(id);
+        return pr.get();
     }
 
     @Override
@@ -91,12 +92,9 @@ public class SelfProductService implements ProductService {
         return products;
     }
 
-    public ProductProjection productbycategory(String category) {
-        ProductProjection productprojection = catrepo.findbycategory(category);
-        productprojection.getId();
-        productprojection.gettittle();
-        productprojection.getPrice();
-        return productprojection;
+    public List<ProductProjection> productbycategory(String category) {
+        List<ProductProjection> pr = prodrepo.findByCategory(category);
+       // pr.get(id).getId();
+        return pr;
     }
-
 }

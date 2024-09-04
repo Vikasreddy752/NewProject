@@ -16,5 +16,5 @@ public interface ProductService {
     public Product deleteproductbyid(int id);
     public Product updateproductbyid(int id, String tittle, String descreption, String image, String price, String category);
     public List<Product> productbytittle(String tittle);
-    public ProductProjection productbycategory(String category);
+    public List<ProductProjection> productbycategory(String category);
 }
